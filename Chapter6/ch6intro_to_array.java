@@ -32,21 +32,26 @@ public class ch6intro_to_array
        int[] negnum = new int[MAX];
 
        Random gen = new Random();
-       int[] num = new int[20];
+      // int[] num = new int[20];
 // pop with random numbers range -50 to 50
 
        for(int i =0; i<num.length; i++)
        {
             num[i] = gen.nextInt(100)-50;
         }
-
-       for(int i =num.length -100; i<num.length; i++)
+/**
+       for(int i = num.length -100; i<num.length; i++)
        {
             System.out.println( num[i] );
         }
+   */     
         System.out.println("----------SORTING-----------"  );
 
-
+        
+        // for each loop
+        for (int s : num){
+            System.out.println(s);
+        }
 
 /**
         int look = 42;
@@ -102,16 +107,17 @@ public class ch6intro_to_array
 
 
 
-/*
-       //   foo(num[7]);
+*/
+         foo(num[0]);
+         System.out.println("***" + num[0]);
 
-       System.out.println(oddnum[7]);
+ 
 
        odd(num,oddnum);
 
-       negnum = neg(num);
+      // negnum = neg(num);
 
- */
+ 
 
      }// end of main
 
@@ -123,18 +129,19 @@ public class ch6intro_to_array
 
 
    }
-    /*
+    
+   // passing int by value
    public static void foo(int x)
    {
-
+       x = 100;
 
    }
 
 
-
+   // arrays are passed by reference
     public static void foo(int [] num)
       {
-
+          num[0] = 100;
       }
 
 
@@ -149,6 +156,7 @@ public class ch6intro_to_array
    }// end of odd
 
  //====================================================
+ /*
      public static int[] neg(int[] m_num)
       {
 
