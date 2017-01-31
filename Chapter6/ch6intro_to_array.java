@@ -22,7 +22,7 @@ public class ch6intro_to_array
 
 
 /**/
-
+        mathy useful = new mathy();
         int x = 50;
        int[] num = new int[100];
        int[] values = new int[20];
@@ -45,13 +45,27 @@ public class ch6intro_to_array
             System.out.println( num[i] );
         }
    */     
+  
+                int look = 42;
+
+        System.out.println(Searches.linearSearch(num,look)  );
         System.out.println("----------SORTING-----------"  );
 
+        oddnum = useful.getOdd(num);
         
         // for each loop
-        for (int s : num){
+        for (int s : oddnum){
             System.out.println(s);
         }
+        
+        useful.getEven(num,evennum);
+        
+        // for each loop
+        for (int s : evennum){
+            System.out.println(s);
+        }
+        
+        
 
 /**
         int look = 42;
