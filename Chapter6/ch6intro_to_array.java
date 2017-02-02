@@ -46,12 +46,14 @@ public class ch6intro_to_array
         }
    */     
   
-                int look = 42;
+        int look = 42;
 
         System.out.println(Searches.linearSearch(num,look)  );
         System.out.println("----------SORTING-----------"  );
 
         oddnum = useful.getOdd(num);
+        Sorts.selectionSort(num);
+        System.out.println(Searches.binarySearch(num,look) );
         
         // for each loop
         for (int s : oddnum){
