@@ -26,9 +26,10 @@ Address Homes   = new Address ("221 B Baker Street", "London", "UK", 60518);
 Address Bob   = new Address ("124 Conch Street", "Bikini Bottom", "US", 61245);
 Address Ned   = new Address ("740 Evergreen Terrace", "Springfield", "US", 78204);
 Address Ed   = new Address ("9764 Jeopardy Lane","Chicago", "IL", 60678);
+Address Phillip   = new Address ("1610 Brestal Court","Chicago", "IL", 60678);
 
 
-       Address [] contacts = {school, Ed, jHome,mHome,ken,Homes,Bob,Ned, dj};
+       Address [] contacts = {school, Ed,rHome,mHome,ken,Homes,Bob,Ned, dj, Phillip};
  
        
        //Sort the Addresses
@@ -37,7 +38,20 @@ Address Ed   = new Address ("9764 Jeopardy Lane","Chicago", "IL", 60678);
 
       String hash1 = contacts[3].toString();
       System.out.println(hash1);
+      
+      for(Address me: contacts){
+            System.out.print(me.hash());
+            System.out.println("-"+me.hash()%20);
+        }
+      Address [] hash_array = new Address[2*contacts.length];
+      
+      for (int i = 0; i < contacts.length;i++){
+          hash_array[contacts[i].hash()%30] = contacts[i];
+        }
 
+      for (Address me2:  hash_array)
+            System.out.println(me2);
+            
         int hash2 = 0;
        for( int i = 0; i<hash1.length();i++)
        {

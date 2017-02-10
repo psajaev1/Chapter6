@@ -15,14 +15,14 @@ import java.util.*;
 public class ch6intro_to_array
 
 {
-    final static int MAX = 15;
+       final static int MAX = 15;
 
     public static void main (String[] args)
     {
 
 
-/**/
-        mathy useful = new mathy();
+/**
+            mathy useful = new mathy();
         int x = 50;
        int[] num = new int[100];
        int[] values = new int[20];
@@ -33,19 +33,19 @@ public class ch6intro_to_array
 
        Random gen = new Random();
       // int[] num = new int[20];
-// pop with random numbers range -50 to 50
+      // pop with random numbers range -50 to 50
 
        for(int i =0; i<num.length; i++)
        {
             num[i] = gen.nextInt(100)-50;
         }
-/**
+
        for(int i = num.length -100; i<num.length; i++)
        {
             System.out.println( num[i] );
         }
-   */     
-  
+        
+  /**
         int look = 42;
 
         System.out.println(Searches.linearSearch(num,look)  );
@@ -69,14 +69,14 @@ public class ch6intro_to_array
         
         
 
-/**
-        int look = 42;
-/**
+
+         look = 42;
+
         System.out.println(Searches.linearSearch(num,look)  );
         System.out.println(Searches.binarySearch(num,look)  );
-/**
 
-/*
+
+
 
         //Sorts.selectionSort(num);
         System.out.println(num.length  );
@@ -88,7 +88,7 @@ public class ch6intro_to_array
         }
 
 
-/*      odd(num,oddnum);
+     odd(num,oddnum);
 
         System.out.println("---------------");
 
@@ -97,18 +97,18 @@ public class ch6intro_to_array
 
 
 
-/*
+
         System.out.println("Enter a number");
         int find = Keyboard.readInt();
 
         System.out.println(Searches. binarySearch(num,find));
 
-   /*
-//searching for 412
+        
+        //searching for 412
           for (int i = 0; i < MAX; i++)
           x++;
 
-      // for (int i = 0; i < MAX; i++)
+          // for (int i = 0; i < MAX; i++)
         //  values[num[i]+25] ++;
         //  x++;
         //how do you count the #of times each value comes up?
@@ -123,7 +123,7 @@ public class ch6intro_to_array
 
 
 
-*/
+       
          foo(num[0]);
          System.out.println("***" + num[0]);
 
@@ -135,23 +135,23 @@ public class ch6intro_to_array
 
  
 
-     }// end of main
-
-   public static int[] doubleSize(int[] array)
-   {
+     // end of main
+     /**
+     public static int[] doubleSize(int[] array)
+     {
 
 
         return array;
-
-
-   }
+    
+    }
+   
     
    // passing int by value
    public static void foo(int x)
    {
        x = 100;
 
-   }
+    }
 
 
    // arrays are passed by reference
@@ -171,19 +171,49 @@ public class ch6intro_to_array
 
    }// end of odd
 
+   
+ 
  //====================================================
- /*
+ 
      public static int[] neg(int[] m_num)
       {
 
 
        return negarray;
-   }//end of neg
-
-    /*  */
-}// end of class
+   }//end of neg*/
 
 
+    
+    int [][] scores = {{1,2,3},
+                      {2,2,3},
+                      {3,2,3},
+                      {4,2,3} };
+   // System.out.println(scores[0].length+"col");
+   //System.out.print(mathy.sumrow(scores[0]));
+  // System.out.println(scores[1][0]);
+   // row1, column 2
+   
+   
+   
+   // makes two dimensional array
+   int [][] table = new int [5][10];
+   
+   // load the table with values
+   for (int row= 0; row < table.length; row++){
+        for (int col = 0; col< table[row].length; col++)
+                table [row][col] = row * 10 + col;
+            }
+            
+   // print the table
+   for (int row= 0; row < table.length; row++){
+        for (int col = 0; col< table[row].length; col++)
+                table [row][col] = row * 10 + col;
+                System.out.println(row);
+        
+                  }
+            }// end of class
+
+        }
 
 
 

@@ -186,16 +186,33 @@ public class mathy
 
 
 
-    public int sumOneRow2DArray(int row)
+    public int sumOneRow2DArray(int row, int [][] array)
     {   int total = 0;
 
+        for (int col = 0; col < array[row].length; col++){
+            total += row[col];
+            
 
 
-
+        }
         return total;
 
     }
 
+    
+    
+    public int sumOneColRow2DArray(int col, int [][] array)
+    {   int total = 0;
+
+        for (int col = 0; i < array.length; col++){
+            total += array[i][row[col - 1]];
+            
+
+
+        }
+        return total;
+        
+    }
 
 
 
