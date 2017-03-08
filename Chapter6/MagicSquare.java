@@ -1,135 +1,128 @@
 
 
-/**
- * Write a description of class MagicSquare here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
 public class MagicSquare
 {
-    /** description of instance variable x (add comment for each instance variable) */
-    private int [][] square;
-
-    /**
-     * Default constructor for objects of class MagicSquare
-     */
-    public MagicSquare()
+    int MagicNum;
+    int [][] square;
+    public MagicSquare(int[][] array)
     {
-        
-    }
-
-    public MagicSquare(int [][] array){
-        
+        MagicNum = 0;
         square = array;
-    }
-    
-    public boolean isMagic(){
-        
-        boolean decision = true;
-        
-        return decision;
-    }
-    
-    public int getMagicNum(){
-        
-        
-    }
-    
-    
-    
-    /**
-        two int parameters and adds them
-        @param 2 int values
-        @return int sum of values
-    */
-
-
-    public int add (int x, int y)
-    {   //System.out.println(sum );
-        int sum;      //sum x and y are local var
-        sum = x+y;
-
-        return sum;
-
-
-    }//end of add
-    
-    
-    public static int sum2DArray(int [][] scores)
-    {
-
-
-
-        for ( int row=0; row < scores.length; row++)
+        for (int k = 0; k < square.length; k++)
         {
-            for ( int col=0; col < scores[row].length; col++)
-                System.out.print (scores[row][col] + "\t");
-
-            System.out.println();
+            MagicNum += square[0][k];
         }
-
-
-        return 0;
-
     }
     
-      public int sumOneRow2DArray(int row, int [][] array)
-    {   int total = 0;
-
-        for (int col = 0; col < array[row].length; col++){
-            total += row[col];
-            
-
-
-        }
-        return total;
-
-    }
-    
-     public int sumOneColRow2DArray(int col, int [][] array)
-    {   int total = 0;
-
-        for (int col = 0; i < array.length; col++){
-            total += array[i][row[col - 1]];
-            
-
-
-        }
-        return total;
-        
-    }
-    
-    
-    public int[] sumall2DArray(int [][] scores)
+    public boolean isMagic()
     {
-        int [] temp = {1,2,3,4,};
+       
+       int testNum = 0;
+       for (int row = 0; row < square.length; row++)
+       {
+           testNum = 0;
+           for (int col = 0; col < square.length; col++)
+           {
+               testNum += square[row][col];
+               
+           }
+           if (testNum != MagicNum) {
+               System.out.print("Rows do not work!");
+               return false;
+            }
+       }
+       
+       for (int col = 0; col < square.length; col++)
+       {
+           testNum = 0;
+           for (int row = 0; row < square.length; row++)
+           {
+               testNum += square[row][col];
+               
+           }
+           if (testNum != MagicNum) {
+               System.out.println("Columns do not work!");
+               return false;
+            }
+       }
+       
+       testNum=0;
+       for ( int row = 0; row < square.length; row++) {
+               testNum += square[row][row];
+       }
+       if (testNum != MagicNum) {
+            System.out.println("Diag0 does not work!");
+            return false;
+        }
+        
+       testNum=0;
+       for (int row = 0; square.length > row ; row++) {
+               testNum += square[row][square[row].length - row - 1];
+       } 
+       if (testNum != MagicNum) {
+           System.out.println("Diag1 does not work!");   
+           return false;
+        }
+            
+            
+       return true;
+}
 
 
-
-
-        return temp;
+    public int getMagicNum()
+    {
+        return MagicNum;   
     }
     
-        /**
-        Doubles the size of an array
-        @param int []
-        @return int [] twice the size, with values copied over
-    */
-   public static int[] doubleSize(int[] array)
-   {
-       //make temp 2 times the size of array
-       int[] temp = new int[array.length * 2];
-       System.out.println(temp.length +"-" );
-
-        //copy all the values over to new array
-       for (int i = 0; i < array.length; i++)
-            temp[i] = array[i];
-
-        //old array changes reference to new larger array
-       array = temp;
-
-        return array;
-
+    public void setMagicSquare(int[][] array)
+    {
+        array = square;
+    }
+    
+    public int addRow(int row)
+    {
+        int sum = 0;
+        for (int col = 0; col < square.length; col++)
+        {
+             sum += square[row][col];
+        }
+        return sum;
+    }
+    
+    public int addColumn(int col)
+    {
+        int sum = 0;
+        for (int row = 0; row < square.length; row++)
+        {
+             sum += square[row][col];
+        }
+        return sum;   
+    }
+    
+    public String toString()
+    {
+     String display = new String();
+     
+     display = "This is the the Magic Square.\n\n";
+     
+     for (int row = 0; row < square.length; row++)
+     {
+         for (int col = 0; col < square[row].length; col++)
+         {
+             display += square[row][col];
+             display += " ";
+         }
+         display += "\n";
+     }
+     
+     display += "\nThis is the magic number: ";
+     display += MagicNum;
+     
+     if (this.isMagic())
+     
+        display += "\n\nThis square is a magic square.";
+     else
+        display += "\n\nThis square is not a magic square.";
+     return display;
     }
 }
